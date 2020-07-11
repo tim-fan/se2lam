@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(se2lam)
 
-add_subdirectory(Thirdparty/DBoW2)
-
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules/)
 
 
@@ -52,6 +50,7 @@ catkin_package(
 #   CATKIN_DEPENDS message_runtime
 )
 
+add_subdirectory(Thirdparty/DBoW2)
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
@@ -136,3 +135,12 @@ target_link_libraries(test_ros
 se2lam
 ${LINK_LIBS}
 )
+
+install(TARGETS se2lam
+                test_vn
+                test_ros
+                datapub
+                imgview
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

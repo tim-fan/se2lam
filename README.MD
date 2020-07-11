@@ -1,5 +1,18 @@
 se2lam
 ---
+
+FORK FROM https://github.com/izhengfan/se2lam
+
+Working on a dockerfile for installing, and perhaps looking at making improvements.
+
+Ideas for improvements:
+*  can move to using apt installed ros-melodic-libg2o (rosdep libg2o) instead of the specific 2016 version? (avoids the need to source build g2o)
+* pub/sub odom as nav_msgs/Odometry instead of geometry_msgs/Vector3Stamped as current
+
+Original readme content follows:
+
+---
+
 On-SE(2) Localization and Mapping for Ground Vehicles by Fusing Odometry and Vision
 
 [![](../../workflows/Build/badge.svg)](../../actions?query=workflow%3A"Build")

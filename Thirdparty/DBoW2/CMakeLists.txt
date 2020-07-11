@@ -32,3 +32,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 add_library(DBoW2se2lam SHARED ${SRCS_DBOW2} ${SRCS_DUTILS})
 target_link_libraries(DBoW2se2lam ${OpenCV_LIBS})
 
+install(TARGETS DBoW2se2lam
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+
