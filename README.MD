@@ -5,7 +5,14 @@ FORK FROM https://github.com/izhengfan/se2lam
 
 Working on a dockerfile for installing, and perhaps looking at making improvements.
 
-Ideas for improvements:
+### Usage
+Download [DatasetRoom.zip](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155051778_link_cuhk_edu_hk/Ef4NuXvLZI1JhfljH9LkNxUB5xrDrCOrRnxwztO5bGKlew?e=U4aind) and  [ORBvoc.bin](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155051778_link_cuhk_edu_hk/EaF2ZkP17rdJrUHT0mrcf74Bl1h_691xZrxNILGbQbYFmA?e=nXRSS4). Save them in the repo base directory, and unzip DatasetRoom.zip into ./DatasetRoom/
+
+     docker build . -t se2lam 
+
+     docker run --network host se2lam rosrun se2lam test_vn /DatasetRoom/ /ORBvoc.bin
+
+### Ideas for improvements:
 *  can move to using apt installed ros-melodic-libg2o (rosdep libg2o) instead of the specific 2016 version? (avoids the need to source build g2o)
 * pub/sub odom as nav_msgs/Odometry instead of geometry_msgs/Vector3Stamped as current
 

@@ -36,3 +36,7 @@ RUN source /opt/ros/melodic/setup.bash \
     && cd .. \
     && catkin config --install -i /opt/ros/melodic/ \
     && catkin build -DCMAKE_BUILD_TYPE=Release
+
+COPY  ./ORBvoc.bin /
+COPY ./DatasetRoom /DatasetRoom
+RUN mv /DatasetRoom/odo_raw_accu.txt /DatasetRoom/odo_raw.txt
